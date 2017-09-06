@@ -6,6 +6,20 @@
 </head>
 <body>
 	
-	<script src="./app.js"></script>
+	<script src="node_modules/systemjs/dist/system.js"></script>
+	<script>
+		// Set our baseUrl reference path
+		SystemJS.config({
+			baseUrl: '/',
+			packages: {
+				'/':{
+					defaultExtension: 'js'
+				}
+			}
+		})
+
+		// Load /js/main.js
+		SystemJS.import('app.js')
+	</script>
 </body>
 </html>
