@@ -5,7 +5,26 @@
 	<title>TypeScript</title>
 </head>
 <body>
+
+	<div id="app">Change with Jquery</div>
 	
-	<script src="./app.js"></script>
+	<script src="node_modules/systemjs/dist/system.js"></script>
+	<script>
+		// Set our baseUrl reference path
+		SystemJS.config({
+			map: {
+				'jQuery': 'node_modules/jquery/dist/jquery.min.js' 
+			},
+			baseUrl: '/',
+			packages: {
+				'/':{
+					defaultExtension: 'js'
+				}
+			}
+		})
+
+		// Load /js/main.js
+		SystemJS.import('app.js')
+	</script>
 </body>
 </html>
